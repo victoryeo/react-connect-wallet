@@ -32,3 +32,18 @@ export const useItems = () => {
         isSuccess,
     };
 };
+
+const fetchItem = async (itemId: string) => {
+    const { data } = await apiInstance.get(`/v2/public/items/${itemId}`);
+    return data;
+};
+
+export const useItem = (itemId: string) => {
+    const { isError, isSuccess, data } = useQuery(["item", itemId], () => fetchItem(itemId));
+
+    return {
+        item: Boolean(data) ? data : null,
+        isError,
+        isSuccess,
+    };
+}

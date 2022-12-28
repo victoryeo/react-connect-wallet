@@ -1,5 +1,5 @@
-import { Alert, Grid } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Alert, Grid, Link } from "@mui/material";
+//import { Link } from "react-router-dom";
 import { useItems } from "../services/itemService";
 import { Item } from "../utils/types";
 import ItemPreview from "./ItemPreview";
@@ -24,7 +24,9 @@ const ItemsList = () => {
                     )}
                     {(items || []).map((item: Item) => (
                         <Grid key={item.id} item sm={4} xs={12}>
-                            <ItemPreview item={item} />
+                            <Link href={`/items/${item.id}`} underline="none">
+                                <ItemPreview item={item} />
+                            </Link>
                         </Grid>
                     ))}
                 </Grid>
