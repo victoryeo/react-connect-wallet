@@ -1,5 +1,6 @@
 import { Box, Container } from "@mui/material";
 import { useEffect } from "react";
+import Wallet from "./Wallet";
 
 interface PageProps {
     title?: string;
@@ -12,7 +13,12 @@ const Page = ({ title, children }: PageProps) => {
     }, []);
 
     return (
+      <>
+        <Box display="flex" sx={{ p: 10, justifyContent: "flex-end" }}>
+            <Wallet />
+        </Box>
         <Container sx={{ py: 8 }}>{children}</Container>
+      </>
     );
 };
 
