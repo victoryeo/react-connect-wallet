@@ -21,9 +21,6 @@ const EthAddress = ({
     const openExplorer = () => {
         let url = "";
         switch (networkId) {
-            case 4:
-                url = "https://rinkeby.etherscan.io/address/" + address;
-                break;
             case 5:
                 url = "https://goerli.etherscan.io/address/" + address;
                 break;
