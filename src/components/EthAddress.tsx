@@ -21,14 +21,17 @@ const EthAddress = ({
     const openExplorer = () => {
         let url = "";
         switch (networkId) {
-            default:
-                url = "https://etherscan.io/address/" + address;
-                break;
             case 4:
                 url = "https://rinkeby.etherscan.io/address/" + address;
                 break;
+            case 5:
+                url = "https://goerli.etherscan.io/address/" + address;
+                break;
             case 137:
                 url = "https://polygonscan.com/address/" + address;
+                break;
+            default:
+                url = "https://etherscan.io/address/" + address;
                 break;
         }
         if (url) {

@@ -19,9 +19,9 @@ interface WalletContextValue {
     isRightNetwork(): boolean;
 }
 
-const ALLOWED_CHAIN_IDS = [1, 4, 147];
+const ALLOWED_CHAIN_IDS = [1, 4, 5, 147];
 
-const chainId = networkId ? parseInt(networkId) : 4;
+const chainId = networkId ? parseInt(networkId) : 5;
 
 const wallets: any[] = [];
 
